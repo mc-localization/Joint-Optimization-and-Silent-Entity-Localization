@@ -1,0 +1,25 @@
+{
+  "length": 250,
+  "seed": 2034,
+  "batch_size": 256,
+  "lr": 0.001,
+  "epochs": 60,
+  "early_stopping": false,
+  "deterministic": false,
+  "loss": "mse_physical_um2",
+  "optimizer_retrained": false,
+  "baseline_reused": true,
+  "baseline_architecture": {
+    "hidden_layers": 3,
+    "width": 192,
+    "parameters": 269842
+  },
+  "deep_architecture": {
+    "hidden_layers": 5,
+    "width": 161,
+    "parameters": 269423
+  },
+  "source_sha256": {
+    "dnn_depth_l250.py": "ed08e544fc73b02a32764ad3766bc8f4d7a5fa39ae7e517fce27ddd4cfb194c7"
+  }
+}

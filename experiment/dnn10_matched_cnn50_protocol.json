@@ -1,0 +1,36 @@
+{
+  "reference_length": 50,
+  "test_length": 250,
+  "hidden_dims": [
+    99,
+    99,
+    98,
+    97,
+    97,
+    97,
+    97,
+    96,
+    96,
+    96
+  ],
+  "dropout": 0.05,
+  "hidden_batch_norm": true,
+  "input_batch_norm": true,
+  "seed": 2034,
+  "batch_size": 256,
+  "lr": 0.001,
+  "epochs": 60,
+  "early_stopping": false,
+  "loss": "mse_physical_um2",
+  "deterministic": false,
+  "optimizer_retrained": false,
+  "expected_parameters": {
+    "cnn_l50": 108290,
+    "dnn_l50": 108290,
+    "cnn_l250": 109890,
+    "dnn_l250": 189090
+  },
+  "source_sha256": {
+    "dnn10_matched_cnn50.py": "9ed4654f483e807df0294efb6c5562161c35c76ddcb458100cc46bec781e5dac"
+  }
+}

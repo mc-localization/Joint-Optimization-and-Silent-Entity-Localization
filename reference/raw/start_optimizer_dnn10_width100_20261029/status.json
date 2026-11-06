@@ -1,0 +1,15 @@
+{
+  "phase": "complete",
+  "pid": 3910,
+  "at_utc": "2026-10-29T03:36:56.687370+00:00",
+  "active": {},
+  "external_training_processes": [],
+  "max_total_parallel_fits": 6,
+  "completed_candidate_fits": 790,
+  "requested_candidate_fits": 790,
+  "completed_rounds": 10,
+  "total_rounds": 10,
+  "failed": {},
+  "disk_free_gib": 9.69052505493164,
+  "completed_at_utc": "2026-10-29T03:36:56.687847+00:00"
+}

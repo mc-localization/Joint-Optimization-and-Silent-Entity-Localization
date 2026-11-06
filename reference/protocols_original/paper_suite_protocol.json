@@ -1,0 +1,234 @@
+{
+  "created_at_utc": "2026-10-27T14:33:46.163376+00:00",
+  "main_lengths": [
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250
+  ],
+  "coarse_lengths": [
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250
+  ],
+  "main_models": [
+    "cnn",
+    "dnn",
+    "gru",
+    "transformer",
+    "mle"
+  ],
+  "priorities": [
+    "Fig7 training convergence and required GRU optimizer search",
+    "25-step supplements",
+    "Fig6/Fig11/Fig12/Fig13"
+  ],
+  "figures": {
+    "fig6": {
+      "length": 100,
+      "models": [
+        "cnn",
+        "dnn",
+        "gru",
+        "transformer",
+        "mle"
+      ],
+      "metric": "success rate versus error threshold"
+    },
+    "fig7": {
+      "length": 100,
+      "models": [
+        "cnn",
+        "dnn",
+        "gru",
+        "transformer"
+      ],
+      "epochs": 60,
+      "early_stopping": false,
+      "loss": "mse_physical_um2",
+      "validation_curve_also_saved": true,
+      "seed": 2025
+    },
+    "fig11": {
+      "molecules": [
+        10000,
+        20000,
+        30000
+      ],
+      "lengths": [
+        25,
+        50,
+        75,
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250
+      ],
+      "localizer": "cnn"
+    },
+    "fig12": {
+      "M": [
+        125,
+        250,
+        375,
+        500
+      ],
+      "physical_window_seconds": [
+        2,
+        3,
+        4
+      ],
+      "localizer": "cnn"
+    },
+    "fig13": {
+      "receivers": [
+        2,
+        4
+      ],
+      "M": 250,
+      "lengths": [
+        25,
+        50,
+        75,
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250
+      ],
+      "localizer": "cnn"
+    }
+  },
+  "parameter_cases": {
+    "q10000": {
+      "M": 250,
+      "n_rx": 4,
+      "Q": 10000,
+      "lengths": [
+        25,
+        50,
+        75,
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250
+      ],
+      "dataset_directory": "future_datasets/molecules_10000/M250",
+      "generation_signature": "3124a5cc4b46d48ca1b43b0e9ae7da89d928b017170c62b0e99630a2ec84b6d6"
+    },
+    "q30000": {
+      "M": 250,
+      "n_rx": 4,
+      "Q": 30000,
+      "lengths": [
+        25,
+        50,
+        75,
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250
+      ],
+      "dataset_directory": "future_datasets/molecules_30000/M250",
+      "generation_signature": "2ac7d7d37cc4d355fae7f24522a3b80caab0becc780ccd48d93870a44bd4e7b9"
+    },
+    "m125": {
+      "M": 125,
+      "n_rx": 4,
+      "Q": 20000,
+      "lengths": [
+        50,
+        75,
+        100
+      ],
+      "dataset_directory": "future_datasets/sampling_reference/M125",
+      "generation_signature": "8eae985c079b2c4123bd493ea070aeed7c9e1c2729bd6a8b11f51cf988bcc16a"
+    },
+    "m375": {
+      "M": 375,
+      "n_rx": 4,
+      "Q": 20000,
+      "lengths": [
+        150,
+        225,
+        300
+      ],
+      "dataset_directory": "future_datasets/sampling_reference/M375",
+      "generation_signature": "8eae985c079b2c4123bd493ea070aeed7c9e1c2729bd6a8b11f51cf988bcc16a"
+    },
+    "m500": {
+      "M": 500,
+      "n_rx": 4,
+      "Q": 20000,
+      "lengths": [
+        200,
+        300,
+        400
+      ],
+      "dataset_directory": "future_datasets/sampling_reference/M500",
+      "generation_signature": "8eae985c079b2c4123bd493ea070aeed7c9e1c2729bd6a8b11f51cf988bcc16a"
+    },
+    "rx2m250": {
+      "M": 250,
+      "n_rx": 2,
+      "Q": 20000,
+      "lengths": [
+        25,
+        50,
+        75,
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250
+      ],
+      "dataset_directory": "future_datasets/physical_2rx/M250",
+      "generation_signature": "c19480ce65d9913ec30997f24672be17a0b85247e9f8782393027b4502c36df8"
+    }
+  },
+  "parameter_optimizer": "Independent DNN optimizer for each physical/data condition",
+  "reuse": "All compatible completed fits, frozen optimizers, templates, predictions and test metrics",
+  "source_sha256": {
+    "run_paper_suite.py": "299c897631796e0eec12cc783bfcc979ce987f8948a9ea7ddd5a3f288c247ab4",
+    "paper_suite_workers.py": "39b3f460025737ee66671aea66fbdf12884af23932aa891937efdc8ba3ffe2f9",
+    "paper_suite_queue.py": "e77bb4ae75181cb63c2eece0e3c04e27c8009a5b37dd1017c41ea310b9bbf622",
+    "paper_suite_figures.py": "2ef3ed6a4c8883563002f5316b03bf45afbcb0326f5173eb621d4c41b021d338",
+    "run_with_gru.py": "c9b48023c1b8650dbb861649201ce6b27711d97c2dbb8130ec7d26f66c715ae2",
+    "gru_protocol.json": "fab13eda41a7ddac62237076cc3cdf91cbdf4848423f7c362b60e8e5f3871900",
+    "transformer_protocol.json": "8ae064019fc4dc9f827d835e0fbcb28202c8d72129b4d381d29dc9c2aaaebf0d",
+    "run_mle_current.py": "75669090dee02464a81a681459ed5e00dfd85b2de9ced063c994586361276d2a"
+  },
+  "baseline_generation_signature": "638b2d260bc16939c1382f33ac0707564b5234eccb561325204fd73388caf798",
+  "resource_policy": {
+    "max_gpu_workers": 6,
+    "maximum_cpu_data_workers": 14,
+    "adapt_to_gpu_worker_count": true
+  },
+  "manuscript_sources_changed": false
+}

@@ -1,0 +1,323 @@
+{
+  "method": "MLE localizer with its independently trained DNN detection-start optimizer",
+  "evaluation_lengths": [
+    50,
+    100,
+    150,
+    200,
+    250
+  ],
+  "configuration": {
+    "paths": {
+      "data_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/data",
+      "checkpoint_cache_dir": "\\root\\autodl-tmp\\end_server_20261010\\experiments\\rx20_grid04_mse_20261026\\checkpoints\\search",
+      "output_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/mle_dnn_optimizer/search",
+      "micro_dataset_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/micro_dataset"
+    },
+    "data": {
+      "input_mode": "increment",
+      "M": 250,
+      "source_M": 250,
+      "n_rx": 4,
+      "molecules": 20000,
+      "sample_seed": 2025,
+      "search_train_samples": 12840,
+      "search_valid_samples": 3424,
+      "final_train_samples": 410640,
+      "final_valid_samples": 25500,
+      "precompute_windows": true,
+      "max_precompute_bytes": 3221225472,
+      "readiness_file": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/preflight/readiness.json",
+      "dataset_protocol_sha256": "638b2d260bc16939c1382f33ac0707564b5234eccb561325204fd73388caf798"
+    },
+    "training": {
+      "loss": "mse_physical_um2",
+      "seed": 2026,
+      "device": "cpu",
+      "batch_size": 1024,
+      "long_window_threshold": 150,
+      "long_window_batch_size": 256,
+      "num_workers": 0,
+      "lr": 0.001,
+      "amp": true,
+      "deterministic": false,
+      "search_epochs": 60,
+      "search_patience": 10,
+      "final_epochs": 60,
+      "final_patience": 10
+    },
+    "evaluation": {
+      "success_threshold_um": 0.4
+    },
+    "search": {
+      "iters": 10,
+      "q_per_round": 6,
+      "policy_epochs_per_round": 1000,
+      "policy_lr": 0.003,
+      "policy_patience": 200,
+      "policy_min_delta": 1e-07,
+      "k_perturb": 4,
+      "k_local": 6,
+      "k_random": 4,
+      "perturb_scale": 12.0,
+      "decay": 0.8,
+      "local_radius": 10,
+      "schedule_seed": 2025,
+      "guided_candidate_seed": 2025,
+      "uniform_candidate_seed": 2026
+    },
+    "policy": {
+      "hidden_dims": [
+        64,
+        64
+      ]
+    },
+    "final": {
+      "lengths": [
+        50,
+        100,
+        150,
+        200,
+        250
+      ],
+      "multi_seed_lengths": [
+        5,
+        15,
+        25,
+        40,
+        50,
+        60,
+        75,
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250
+      ],
+      "extra_seeds": []
+    },
+    "additional": {
+      "exp1_models": [
+        "cnn"
+      ],
+      "receiver_lengths": [
+        25,
+        50,
+        75,
+        100,
+        125,
+        150,
+        175,
+        200,
+        225,
+        250
+      ]
+    },
+    "convergence": {
+      "length": 100,
+      "seed": 2025,
+      "epochs": 60,
+      "patience": 10
+    },
+    "complexity": {
+      "length": 50,
+      "warmup": 10,
+      "repeats": 50
+    },
+    "models": {
+      "dnn": [
+        {
+          "id": "matched_100k",
+          "hidden_dim": 192,
+          "num_hidden_layers": 3,
+          "dropout": 0.05
+        }
+      ],
+      "cnn": [
+        {
+          "id": "multiscale_position_preserving",
+          "channels": 40,
+          "pooled_bins": 4,
+          "mlp_hidden": 96,
+          "dropout": 0.05
+        }
+      ],
+      "gru": [
+        {
+          "id": "matched_100k",
+          "hidden_dim": 100,
+          "num_layers": 2,
+          "head_hidden": 192,
+          "dropout": 0.05
+        }
+      ],
+      "transformer": [
+        {
+          "id": "matched_100k",
+          "d_model": 64,
+          "nhead": 4,
+          "num_layers": 2,
+          "dim_feedforward": 256,
+          "head_hidden": 192,
+          "dropout": 0.05
+        }
+      ]
+    },
+    "refit": {
+      "lr": 0.003,
+      "steps": 6000
+    },
+    "comparison": {
+      "seeds": [
+        2025
+      ],
+      "validation_lengths": [
+        15,
+        50,
+        100,
+        175,
+        200,
+        225
+      ],
+      "exhaustive_lengths": [
+        50,
+        100,
+        200
+      ],
+      "cache_sources": [],
+      "heldout_lengths": []
+    },
+    "simulation": {
+      "grid_step": 0.4,
+      "train_repeats": 60,
+      "valid_repeats": 15,
+      "test_points": 2000,
+      "molecules": 20000,
+      "steps": 1000,
+      "dt": 0.005,
+      "diffusion": 79.4,
+      "features": 250,
+      "seed": 2025,
+      "grid_origin": [
+        0,
+        0
+      ]
+    },
+    "geometry": {
+      "grid_origin": [
+        0,
+        0
+      ],
+      "grid_step": 0.4,
+      "integer_indices": [
+        -50,
+        50
+      ],
+      "coordinate_rule": "(x,y)=(2*i/5,2*j/5), i,j signed integers",
+      "receivers": [
+        [
+          -20.0,
+          -20.0,
+          4.0
+        ],
+        [
+          -20.0,
+          20.0,
+          4.0
+        ],
+        [
+          20.0,
+          -20.0,
+          4.0
+        ],
+        [
+          20.0,
+          20.0,
+          4.0
+        ]
+      ],
+      "tx": [
+        0,
+        0
+      ],
+      "eve_radius": 4,
+      "x_range": [
+        -20,
+        20
+      ],
+      "y_range": [
+        -20,
+        20
+      ],
+      "exclusion": "distance(Tx)>4; distance(each Rx)>8",
+      "split": "validation: (i+j)%5 == 0; training: all remaining feasible points"
+    },
+    "selection": {
+      "checkpoint": "minimum validation physical MSE",
+      "start_candidate": "minimum validation mean Euclidean localization error",
+      "candidate_score_field": "val_mean_error_um",
+      "validation_loss_field": "val_mse_um2",
+      "test_metrics": [
+        "mean_error_um",
+        "median_error_um",
+        "p90_error_um",
+        "success_rate"
+      ],
+      "candidate_train_positions": 428,
+      "candidate_train_repetitions": 30,
+      "candidate_position_fraction": 0.05,
+      "candidate_fraction_denominator": "all feasible SE grid positions",
+      "candidate_count_rule": "ceil(candidate_position_fraction * total_feasible_grid_positions)",
+      "candidate_eligible_positions": "formal training-coordinate split only",
+      "candidate_validation_repetitions": 8,
+      "search_seed": 2026,
+      "final_seed": 2025,
+      "old_optimizer_or_checkpoint_reuse": false,
+      "candidate_coordinates": "Use the proportional count and recursive equal-population spatial strata, with one medoid from each stratum; freeze positions and realization indices across all four models.",
+      "scope": "CNN and DNN model-specific start optimizers and optimized evaluation; CNN fixed and coarse controls only."
+    },
+    "_localizer": "mle",
+    "_variant": "full",
+    "_signature": "753b84e80ce2d903e15a9185a23b1b5023e77c94ce9de73fe9be91e9113b4f75"
+  },
+  "generation_signature": "638b2d260bc16939c1382f33ac0707564b5234eccb561325204fd73388caf798",
+  "micro_manifest_sha256": "5a1ec6118b033ebb839dab116ef7bc6d645bb6fa2b73c830b965be31b3fd0cd0",
+  "candidate_plan_sha256": "a75bc5a623358c8120e5ae555d4ad699e22e2bfc17e5b8b1be1578db094da818",
+  "position_plan_sha256": "0da87a418deba4e4492eae520978876f1a753e89d8ac14b3cc920735d014785d",
+  "source_sha256": {
+    "run_mle_current.py": "75669090dee02464a81a681459ed5e00dfd85b2de9ced063c994586361276d2a",
+    "mle_likelihood_original.py": "c391a458dee0385d58bf76bcea8c73577410f51c05f1a2c3f35ef73408cdf5d4",
+    "experiment_common.py": "838183d21c686aa03f8ce06f2d4559e5e859a0d3e2f4f39fb9e16fd53f56c54b",
+    "runtime/policy_search.py": "f65acfcf70fb96f5869f576c4dafb7088a7b2a4e554403f76d47e8c10995dca9",
+    "runtime/run_experiment_4rx.py": "44e91b2e756a6b5d59f4be043f0653f1dd15aa61cb6f63a40d6751ca63d4c4c8",
+    "runtime/retest_models_4rx.py": "71b20ede2ac8f814b5a8642a461c6e739eb44105ca7329bb8627abb7aec7fa8c",
+    "runtime/npz_io.py": "1a5af47c5e70cf39d481902058bd5fa2014e6a2d193b326062fef1b27fa9389c"
+  },
+  "legacy_likelihood_helper_sha256": "c391a458dee0385d58bf76bcea8c73577410f51c05f1a2c3f35ef73408cdf5d4",
+  "micro_template_positions": 428,
+  "micro_template_repetitions": 30,
+  "micro_validation_repetitions": 8,
+  "micro_training_samples": 12840,
+  "micro_validation_samples": 3424,
+  "final_training_positions": 6844,
+  "final_training_repetitions": 60,
+  "final_training_samples": 410640,
+  "test_samples": 2000,
+  "test_sha256": "72d0b7a61c54c991a388baa4e738c3850830fa8521b4ab21cbec2228c252c014",
+  "likelihood": "Training-simulation empirical multinomial; receiver/time-interval outcomes plus residual",
+  "pseudocount": 0.5,
+  "template_domain": "Current formal training positions",
+  "selection_metric": "Mean Euclidean micro-validation localization error in micrometers",
+  "optimizer": "DNN with hidden dimensions [64,64], original ten-round search and per-round Adam fitting",
+  "optimizer_seed": 2026,
+  "optimizer_loss": "MSE of normalized detection start time fractions",
+  "search_length_pool": "All integer lengths 1..249, same as current CNN and DNN",
+  "final_start_selection": "Frozen MLE-specific DNN prediction",
+  "CPU_threads": 1,
+  "GPU_used": false,
+  "old_geometry_templates_reused": false,
+  "other_model_optimizers_reused": false,
+  "protocol_sha256": "753b84e80ce2d903e15a9185a23b1b5023e77c94ce9de73fe9be91e9113b4f75"
+}

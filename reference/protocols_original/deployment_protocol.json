@@ -1,0 +1,1557 @@
+{
+  "created_at_utc": "2026-10-26T16:08:37.263814+00:00",
+  "scope": [
+    "DNN localizer start optimizer and optimized evaluation",
+    "CNN localizer start optimizer and optimized evaluation",
+    "CNN fixed start",
+    "CNN coarse grid start search"
+  ],
+  "cases": {
+    "cnn": {
+      "final_cfg": {
+        "paths": {
+          "data_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/data",
+          "checkpoint_cache_dir": "\\root\\autodl-tmp\\end_server_20261010\\experiments\\rx20_grid04_mse_20261026\\checkpoints\\formal",
+          "output_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/results/cnn",
+          "micro_dataset_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/micro_dataset"
+        },
+        "data": {
+          "input_mode": "increment",
+          "M": 250,
+          "source_M": 250,
+          "n_rx": 4,
+          "molecules": 20000,
+          "sample_seed": 2025,
+          "search_train_samples": 12840,
+          "search_valid_samples": 3424,
+          "final_train_samples": 410640,
+          "final_valid_samples": 25500,
+          "precompute_windows": true,
+          "max_precompute_bytes": 3221225472,
+          "readiness_file": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/preflight/readiness.json",
+          "dataset_protocol_sha256": "638b2d260bc16939c1382f33ac0707564b5234eccb561325204fd73388caf798"
+        },
+        "training": {
+          "loss": "mse_physical_um2",
+          "seed": 2025,
+          "device": "cuda",
+          "batch_size": 1024,
+          "long_window_threshold": 150,
+          "long_window_batch_size": 256,
+          "num_workers": 0,
+          "lr": 0.001,
+          "amp": true,
+          "deterministic": false,
+          "search_epochs": 60,
+          "search_patience": 10,
+          "final_epochs": 60,
+          "final_patience": 10
+        },
+        "evaluation": {
+          "success_threshold_um": 0.4
+        },
+        "search": {
+          "iters": 10,
+          "q_per_round": 6,
+          "policy_epochs_per_round": 1000,
+          "policy_lr": 0.003,
+          "policy_patience": 200,
+          "policy_min_delta": 1e-07,
+          "k_perturb": 4,
+          "k_local": 6,
+          "k_random": 4,
+          "perturb_scale": 12.0,
+          "decay": 0.8,
+          "local_radius": 10,
+          "schedule_seed": 2025,
+          "guided_candidate_seed": 2025,
+          "uniform_candidate_seed": 2026
+        },
+        "policy": {
+          "hidden_dims": [
+            64,
+            64
+          ]
+        },
+        "final": {
+          "lengths": [
+            10,
+            20,
+            25,
+            30,
+            40,
+            50,
+            60,
+            70,
+            75,
+            80,
+            90,
+            100,
+            110,
+            120,
+            125,
+            130,
+            140,
+            150,
+            160,
+            170,
+            175,
+            180,
+            190,
+            200,
+            210,
+            220,
+            225,
+            230,
+            240,
+            250
+          ],
+          "multi_seed_lengths": [
+            5,
+            15,
+            25,
+            40,
+            50,
+            60,
+            75,
+            100,
+            125,
+            150,
+            175,
+            200,
+            225,
+            250
+          ],
+          "extra_seeds": []
+        },
+        "additional": {
+          "exp1_models": [
+            "cnn"
+          ],
+          "receiver_lengths": [
+            25,
+            50,
+            75,
+            100,
+            125,
+            150,
+            175,
+            200,
+            225,
+            250
+          ]
+        },
+        "convergence": {
+          "length": 100,
+          "seed": 2025,
+          "epochs": 60,
+          "patience": 10
+        },
+        "complexity": {
+          "length": 50,
+          "warmup": 10,
+          "repeats": 50
+        },
+        "models": {
+          "dnn": [
+            {
+              "id": "matched_100k",
+              "hidden_dim": 192,
+              "num_hidden_layers": 3,
+              "dropout": 0.05
+            }
+          ],
+          "cnn": [
+            {
+              "id": "multiscale_position_preserving",
+              "channels": 40,
+              "pooled_bins": 4,
+              "mlp_hidden": 96,
+              "dropout": 0.05
+            }
+          ],
+          "gru": [
+            {
+              "id": "matched_100k",
+              "hidden_dim": 100,
+              "num_layers": 2,
+              "head_hidden": 192,
+              "dropout": 0.05
+            }
+          ],
+          "transformer": [
+            {
+              "id": "matched_100k",
+              "d_model": 64,
+              "nhead": 4,
+              "num_layers": 2,
+              "dim_feedforward": 256,
+              "head_hidden": 192,
+              "dropout": 0.05
+            }
+          ]
+        },
+        "refit": {
+          "lr": 0.003,
+          "steps": 6000
+        },
+        "comparison": {
+          "seeds": [
+            2025
+          ],
+          "validation_lengths": [
+            15,
+            50,
+            100,
+            175,
+            200,
+            225
+          ],
+          "exhaustive_lengths": [
+            50,
+            100,
+            200
+          ],
+          "cache_sources": [],
+          "heldout_lengths": []
+        },
+        "simulation": {
+          "grid_step": 0.4,
+          "train_repeats": 60,
+          "valid_repeats": 15,
+          "test_points": 2000,
+          "molecules": 20000,
+          "steps": 1000,
+          "dt": 0.005,
+          "diffusion": 79.4,
+          "features": 250,
+          "seed": 2025,
+          "grid_origin": [
+            0,
+            0
+          ]
+        },
+        "geometry": {
+          "grid_origin": [
+            0,
+            0
+          ],
+          "grid_step": 0.4,
+          "integer_indices": [
+            -50,
+            50
+          ],
+          "coordinate_rule": "(x,y)=(2*i/5,2*j/5), i,j signed integers",
+          "receivers": [
+            [
+              -20.0,
+              -20.0,
+              4.0
+            ],
+            [
+              -20.0,
+              20.0,
+              4.0
+            ],
+            [
+              20.0,
+              -20.0,
+              4.0
+            ],
+            [
+              20.0,
+              20.0,
+              4.0
+            ]
+          ],
+          "tx": [
+            0,
+            0
+          ],
+          "eve_radius": 4,
+          "x_range": [
+            -20,
+            20
+          ],
+          "y_range": [
+            -20,
+            20
+          ],
+          "exclusion": "distance(Tx)>4; distance(each Rx)>8",
+          "split": "validation: (i+j)%5 == 0; training: all remaining feasible points"
+        },
+        "selection": {
+          "checkpoint": "minimum validation physical MSE",
+          "start_candidate": "minimum validation mean Euclidean localization error",
+          "candidate_score_field": "val_mean_error_um",
+          "validation_loss_field": "val_mse_um2",
+          "test_metrics": [
+            "mean_error_um",
+            "median_error_um",
+            "p90_error_um",
+            "success_rate"
+          ],
+          "candidate_train_positions": 428,
+          "candidate_train_repetitions": 30,
+          "candidate_position_fraction": 0.05,
+          "candidate_fraction_denominator": "all feasible SE grid positions",
+          "candidate_count_rule": "ceil(candidate_position_fraction * total_feasible_grid_positions)",
+          "candidate_eligible_positions": "formal training-coordinate split only",
+          "candidate_validation_repetitions": 8,
+          "search_seed": 2026,
+          "final_seed": 2025,
+          "old_optimizer_or_checkpoint_reuse": false,
+          "candidate_coordinates": "Use the proportional count and recursive equal-population spatial strata, with one medoid from each stratum; freeze positions and realization indices across all four models.",
+          "scope": "CNN and DNN model-specific start optimizers and optimized evaluation; CNN fixed and coarse controls only."
+        }
+      },
+      "search_cfg": {
+        "paths": {
+          "data_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/data",
+          "checkpoint_cache_dir": "\\root\\autodl-tmp\\end_server_20261010\\experiments\\rx20_grid04_mse_20261026\\checkpoints\\search",
+          "output_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/results/cnn",
+          "micro_dataset_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/micro_dataset"
+        },
+        "data": {
+          "input_mode": "increment",
+          "M": 250,
+          "source_M": 250,
+          "n_rx": 4,
+          "molecules": 20000,
+          "sample_seed": 2025,
+          "search_train_samples": 12840,
+          "search_valid_samples": 3424,
+          "final_train_samples": 410640,
+          "final_valid_samples": 25500,
+          "precompute_windows": true,
+          "max_precompute_bytes": 3221225472,
+          "readiness_file": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/preflight/readiness.json",
+          "dataset_protocol_sha256": "638b2d260bc16939c1382f33ac0707564b5234eccb561325204fd73388caf798"
+        },
+        "training": {
+          "loss": "mse_physical_um2",
+          "seed": 2026,
+          "device": "cuda",
+          "batch_size": 1024,
+          "long_window_threshold": 150,
+          "long_window_batch_size": 256,
+          "num_workers": 0,
+          "lr": 0.001,
+          "amp": true,
+          "deterministic": false,
+          "search_epochs": 60,
+          "search_patience": 10,
+          "final_epochs": 60,
+          "final_patience": 10
+        },
+        "evaluation": {
+          "success_threshold_um": 0.4
+        },
+        "search": {
+          "iters": 10,
+          "q_per_round": 6,
+          "policy_epochs_per_round": 1000,
+          "policy_lr": 0.003,
+          "policy_patience": 200,
+          "policy_min_delta": 1e-07,
+          "k_perturb": 4,
+          "k_local": 6,
+          "k_random": 4,
+          "perturb_scale": 12.0,
+          "decay": 0.8,
+          "local_radius": 10,
+          "schedule_seed": 2025,
+          "guided_candidate_seed": 2025,
+          "uniform_candidate_seed": 2026
+        },
+        "policy": {
+          "hidden_dims": [
+            64,
+            64
+          ]
+        },
+        "final": {
+          "lengths": [
+            10,
+            20,
+            25,
+            30,
+            40,
+            50,
+            60,
+            70,
+            75,
+            80,
+            90,
+            100,
+            110,
+            120,
+            125,
+            130,
+            140,
+            150,
+            160,
+            170,
+            175,
+            180,
+            190,
+            200,
+            210,
+            220,
+            225,
+            230,
+            240,
+            250
+          ],
+          "multi_seed_lengths": [
+            5,
+            15,
+            25,
+            40,
+            50,
+            60,
+            75,
+            100,
+            125,
+            150,
+            175,
+            200,
+            225,
+            250
+          ],
+          "extra_seeds": []
+        },
+        "additional": {
+          "exp1_models": [
+            "cnn"
+          ],
+          "receiver_lengths": [
+            25,
+            50,
+            75,
+            100,
+            125,
+            150,
+            175,
+            200,
+            225,
+            250
+          ]
+        },
+        "convergence": {
+          "length": 100,
+          "seed": 2025,
+          "epochs": 60,
+          "patience": 10
+        },
+        "complexity": {
+          "length": 50,
+          "warmup": 10,
+          "repeats": 50
+        },
+        "models": {
+          "dnn": [
+            {
+              "id": "matched_100k",
+              "hidden_dim": 192,
+              "num_hidden_layers": 3,
+              "dropout": 0.05
+            }
+          ],
+          "cnn": [
+            {
+              "id": "multiscale_position_preserving",
+              "channels": 40,
+              "pooled_bins": 4,
+              "mlp_hidden": 96,
+              "dropout": 0.05
+            }
+          ],
+          "gru": [
+            {
+              "id": "matched_100k",
+              "hidden_dim": 100,
+              "num_layers": 2,
+              "head_hidden": 192,
+              "dropout": 0.05
+            }
+          ],
+          "transformer": [
+            {
+              "id": "matched_100k",
+              "d_model": 64,
+              "nhead": 4,
+              "num_layers": 2,
+              "dim_feedforward": 256,
+              "head_hidden": 192,
+              "dropout": 0.05
+            }
+          ]
+        },
+        "refit": {
+          "lr": 0.003,
+          "steps": 6000
+        },
+        "comparison": {
+          "seeds": [
+            2025
+          ],
+          "validation_lengths": [
+            15,
+            50,
+            100,
+            175,
+            200,
+            225
+          ],
+          "exhaustive_lengths": [
+            50,
+            100,
+            200
+          ],
+          "cache_sources": [],
+          "heldout_lengths": []
+        },
+        "simulation": {
+          "grid_step": 0.4,
+          "train_repeats": 60,
+          "valid_repeats": 15,
+          "test_points": 2000,
+          "molecules": 20000,
+          "steps": 1000,
+          "dt": 0.005,
+          "diffusion": 79.4,
+          "features": 250,
+          "seed": 2025,
+          "grid_origin": [
+            0,
+            0
+          ]
+        },
+        "geometry": {
+          "grid_origin": [
+            0,
+            0
+          ],
+          "grid_step": 0.4,
+          "integer_indices": [
+            -50,
+            50
+          ],
+          "coordinate_rule": "(x,y)=(2*i/5,2*j/5), i,j signed integers",
+          "receivers": [
+            [
+              -20.0,
+              -20.0,
+              4.0
+            ],
+            [
+              -20.0,
+              20.0,
+              4.0
+            ],
+            [
+              20.0,
+              -20.0,
+              4.0
+            ],
+            [
+              20.0,
+              20.0,
+              4.0
+            ]
+          ],
+          "tx": [
+            0,
+            0
+          ],
+          "eve_radius": 4,
+          "x_range": [
+            -20,
+            20
+          ],
+          "y_range": [
+            -20,
+            20
+          ],
+          "exclusion": "distance(Tx)>4; distance(each Rx)>8",
+          "split": "validation: (i+j)%5 == 0; training: all remaining feasible points"
+        },
+        "selection": {
+          "checkpoint": "minimum validation physical MSE",
+          "start_candidate": "minimum validation mean Euclidean localization error",
+          "candidate_score_field": "val_mean_error_um",
+          "validation_loss_field": "val_mse_um2",
+          "test_metrics": [
+            "mean_error_um",
+            "median_error_um",
+            "p90_error_um",
+            "success_rate"
+          ],
+          "candidate_train_positions": 428,
+          "candidate_train_repetitions": 30,
+          "candidate_position_fraction": 0.05,
+          "candidate_fraction_denominator": "all feasible SE grid positions",
+          "candidate_count_rule": "ceil(candidate_position_fraction * total_feasible_grid_positions)",
+          "candidate_eligible_positions": "formal training-coordinate split only",
+          "candidate_validation_repetitions": 8,
+          "search_seed": 2026,
+          "final_seed": 2025,
+          "old_optimizer_or_checkpoint_reuse": false,
+          "candidate_coordinates": "Use the proportional count and recursive equal-population spatial strata, with one medoid from each stratum; freeze positions and realization indices across all four models.",
+          "scope": "CNN and DNN model-specific start optimizers and optimized evaluation; CNN fixed and coarse controls only."
+        }
+      }
+    },
+    "dnn": {
+      "final_cfg": {
+        "paths": {
+          "data_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/data",
+          "checkpoint_cache_dir": "\\root\\autodl-tmp\\end_server_20261010\\experiments\\rx20_grid04_mse_20261026\\checkpoints\\formal",
+          "output_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/results/dnn",
+          "micro_dataset_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/micro_dataset"
+        },
+        "data": {
+          "input_mode": "increment",
+          "M": 250,
+          "source_M": 250,
+          "n_rx": 4,
+          "molecules": 20000,
+          "sample_seed": 2025,
+          "search_train_samples": 12840,
+          "search_valid_samples": 3424,
+          "final_train_samples": 410640,
+          "final_valid_samples": 25500,
+          "precompute_windows": true,
+          "max_precompute_bytes": 3221225472,
+          "readiness_file": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/preflight/readiness.json",
+          "dataset_protocol_sha256": "638b2d260bc16939c1382f33ac0707564b5234eccb561325204fd73388caf798"
+        },
+        "training": {
+          "loss": "mse_physical_um2",
+          "seed": 2025,
+          "device": "cuda",
+          "batch_size": 1024,
+          "long_window_threshold": 150,
+          "long_window_batch_size": 256,
+          "num_workers": 0,
+          "lr": 0.001,
+          "amp": true,
+          "deterministic": false,
+          "search_epochs": 60,
+          "search_patience": 10,
+          "final_epochs": 60,
+          "final_patience": 10
+        },
+        "evaluation": {
+          "success_threshold_um": 0.4
+        },
+        "search": {
+          "iters": 10,
+          "q_per_round": 6,
+          "policy_epochs_per_round": 1000,
+          "policy_lr": 0.003,
+          "policy_patience": 200,
+          "policy_min_delta": 1e-07,
+          "k_perturb": 4,
+          "k_local": 6,
+          "k_random": 4,
+          "perturb_scale": 12.0,
+          "decay": 0.8,
+          "local_radius": 10,
+          "schedule_seed": 2025,
+          "guided_candidate_seed": 2025,
+          "uniform_candidate_seed": 2026
+        },
+        "policy": {
+          "hidden_dims": [
+            64,
+            64
+          ]
+        },
+        "final": {
+          "lengths": [
+            10,
+            20,
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100,
+            110,
+            120,
+            130,
+            140,
+            150,
+            160,
+            170,
+            180,
+            190,
+            200,
+            210,
+            220,
+            225,
+            230,
+            240,
+            250
+          ],
+          "multi_seed_lengths": [
+            5,
+            15,
+            25,
+            40,
+            50,
+            60,
+            75,
+            100,
+            125,
+            150,
+            175,
+            200,
+            225,
+            250
+          ],
+          "extra_seeds": []
+        },
+        "additional": {
+          "exp1_models": [
+            "cnn"
+          ],
+          "receiver_lengths": [
+            25,
+            50,
+            75,
+            100,
+            125,
+            150,
+            175,
+            200,
+            225,
+            250
+          ]
+        },
+        "convergence": {
+          "length": 100,
+          "seed": 2025,
+          "epochs": 60,
+          "patience": 10
+        },
+        "complexity": {
+          "length": 50,
+          "warmup": 10,
+          "repeats": 50
+        },
+        "models": {
+          "dnn": [
+            {
+              "id": "matched_100k",
+              "hidden_dim": 192,
+              "num_hidden_layers": 3,
+              "dropout": 0.05
+            }
+          ],
+          "cnn": [
+            {
+              "id": "multiscale_position_preserving",
+              "channels": 40,
+              "pooled_bins": 4,
+              "mlp_hidden": 96,
+              "dropout": 0.05
+            }
+          ],
+          "gru": [
+            {
+              "id": "matched_100k",
+              "hidden_dim": 100,
+              "num_layers": 2,
+              "head_hidden": 192,
+              "dropout": 0.05
+            }
+          ],
+          "transformer": [
+            {
+              "id": "matched_100k",
+              "d_model": 64,
+              "nhead": 4,
+              "num_layers": 2,
+              "dim_feedforward": 256,
+              "head_hidden": 192,
+              "dropout": 0.05
+            }
+          ]
+        },
+        "refit": {
+          "lr": 0.003,
+          "steps": 6000
+        },
+        "comparison": {
+          "seeds": [
+            2025
+          ],
+          "validation_lengths": [
+            15,
+            50,
+            100,
+            175,
+            200,
+            225
+          ],
+          "exhaustive_lengths": [
+            50,
+            100,
+            200
+          ],
+          "cache_sources": [],
+          "heldout_lengths": []
+        },
+        "simulation": {
+          "grid_step": 0.4,
+          "train_repeats": 60,
+          "valid_repeats": 15,
+          "test_points": 2000,
+          "molecules": 20000,
+          "steps": 1000,
+          "dt": 0.005,
+          "diffusion": 79.4,
+          "features": 250,
+          "seed": 2025,
+          "grid_origin": [
+            0,
+            0
+          ]
+        },
+        "geometry": {
+          "grid_origin": [
+            0,
+            0
+          ],
+          "grid_step": 0.4,
+          "integer_indices": [
+            -50,
+            50
+          ],
+          "coordinate_rule": "(x,y)=(2*i/5,2*j/5), i,j signed integers",
+          "receivers": [
+            [
+              -20.0,
+              -20.0,
+              4.0
+            ],
+            [
+              -20.0,
+              20.0,
+              4.0
+            ],
+            [
+              20.0,
+              -20.0,
+              4.0
+            ],
+            [
+              20.0,
+              20.0,
+              4.0
+            ]
+          ],
+          "tx": [
+            0,
+            0
+          ],
+          "eve_radius": 4,
+          "x_range": [
+            -20,
+            20
+          ],
+          "y_range": [
+            -20,
+            20
+          ],
+          "exclusion": "distance(Tx)>4; distance(each Rx)>8",
+          "split": "validation: (i+j)%5 == 0; training: all remaining feasible points"
+        },
+        "selection": {
+          "checkpoint": "minimum validation physical MSE",
+          "start_candidate": "minimum validation mean Euclidean localization error",
+          "candidate_score_field": "val_mean_error_um",
+          "validation_loss_field": "val_mse_um2",
+          "test_metrics": [
+            "mean_error_um",
+            "median_error_um",
+            "p90_error_um",
+            "success_rate"
+          ],
+          "candidate_train_positions": 428,
+          "candidate_train_repetitions": 30,
+          "candidate_position_fraction": 0.05,
+          "candidate_fraction_denominator": "all feasible SE grid positions",
+          "candidate_count_rule": "ceil(candidate_position_fraction * total_feasible_grid_positions)",
+          "candidate_eligible_positions": "formal training-coordinate split only",
+          "candidate_validation_repetitions": 8,
+          "search_seed": 2026,
+          "final_seed": 2025,
+          "old_optimizer_or_checkpoint_reuse": false,
+          "candidate_coordinates": "Use the proportional count and recursive equal-population spatial strata, with one medoid from each stratum; freeze positions and realization indices across all four models.",
+          "scope": "CNN and DNN model-specific start optimizers and optimized evaluation; CNN fixed and coarse controls only."
+        }
+      },
+      "search_cfg": {
+        "paths": {
+          "data_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/data",
+          "checkpoint_cache_dir": "\\root\\autodl-tmp\\end_server_20261010\\experiments\\rx20_grid04_mse_20261026\\checkpoints\\search",
+          "output_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/results/dnn",
+          "micro_dataset_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/micro_dataset"
+        },
+        "data": {
+          "input_mode": "increment",
+          "M": 250,
+          "source_M": 250,
+          "n_rx": 4,
+          "molecules": 20000,
+          "sample_seed": 2025,
+          "search_train_samples": 12840,
+          "search_valid_samples": 3424,
+          "final_train_samples": 410640,
+          "final_valid_samples": 25500,
+          "precompute_windows": true,
+          "max_precompute_bytes": 3221225472,
+          "readiness_file": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/preflight/readiness.json",
+          "dataset_protocol_sha256": "638b2d260bc16939c1382f33ac0707564b5234eccb561325204fd73388caf798"
+        },
+        "training": {
+          "loss": "mse_physical_um2",
+          "seed": 2026,
+          "device": "cuda",
+          "batch_size": 1024,
+          "long_window_threshold": 150,
+          "long_window_batch_size": 256,
+          "num_workers": 0,
+          "lr": 0.001,
+          "amp": true,
+          "deterministic": false,
+          "search_epochs": 60,
+          "search_patience": 10,
+          "final_epochs": 60,
+          "final_patience": 10
+        },
+        "evaluation": {
+          "success_threshold_um": 0.4
+        },
+        "search": {
+          "iters": 10,
+          "q_per_round": 6,
+          "policy_epochs_per_round": 1000,
+          "policy_lr": 0.003,
+          "policy_patience": 200,
+          "policy_min_delta": 1e-07,
+          "k_perturb": 4,
+          "k_local": 6,
+          "k_random": 4,
+          "perturb_scale": 12.0,
+          "decay": 0.8,
+          "local_radius": 10,
+          "schedule_seed": 2025,
+          "guided_candidate_seed": 2025,
+          "uniform_candidate_seed": 2026
+        },
+        "policy": {
+          "hidden_dims": [
+            64,
+            64
+          ]
+        },
+        "final": {
+          "lengths": [
+            10,
+            20,
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100,
+            110,
+            120,
+            130,
+            140,
+            150,
+            160,
+            170,
+            180,
+            190,
+            200,
+            210,
+            220,
+            225,
+            230,
+            240,
+            250
+          ],
+          "multi_seed_lengths": [
+            5,
+            15,
+            25,
+            40,
+            50,
+            60,
+            75,
+            100,
+            125,
+            150,
+            175,
+            200,
+            225,
+            250
+          ],
+          "extra_seeds": []
+        },
+        "additional": {
+          "exp1_models": [
+            "cnn"
+          ],
+          "receiver_lengths": [
+            25,
+            50,
+            75,
+            100,
+            125,
+            150,
+            175,
+            200,
+            225,
+            250
+          ]
+        },
+        "convergence": {
+          "length": 100,
+          "seed": 2025,
+          "epochs": 60,
+          "patience": 10
+        },
+        "complexity": {
+          "length": 50,
+          "warmup": 10,
+          "repeats": 50
+        },
+        "models": {
+          "dnn": [
+            {
+              "id": "matched_100k",
+              "hidden_dim": 192,
+              "num_hidden_layers": 3,
+              "dropout": 0.05
+            }
+          ],
+          "cnn": [
+            {
+              "id": "multiscale_position_preserving",
+              "channels": 40,
+              "pooled_bins": 4,
+              "mlp_hidden": 96,
+              "dropout": 0.05
+            }
+          ],
+          "gru": [
+            {
+              "id": "matched_100k",
+              "hidden_dim": 100,
+              "num_layers": 2,
+              "head_hidden": 192,
+              "dropout": 0.05
+            }
+          ],
+          "transformer": [
+            {
+              "id": "matched_100k",
+              "d_model": 64,
+              "nhead": 4,
+              "num_layers": 2,
+              "dim_feedforward": 256,
+              "head_hidden": 192,
+              "dropout": 0.05
+            }
+          ]
+        },
+        "refit": {
+          "lr": 0.003,
+          "steps": 6000
+        },
+        "comparison": {
+          "seeds": [
+            2025
+          ],
+          "validation_lengths": [
+            15,
+            50,
+            100,
+            175,
+            200,
+            225
+          ],
+          "exhaustive_lengths": [
+            50,
+            100,
+            200
+          ],
+          "cache_sources": [],
+          "heldout_lengths": []
+        },
+        "simulation": {
+          "grid_step": 0.4,
+          "train_repeats": 60,
+          "valid_repeats": 15,
+          "test_points": 2000,
+          "molecules": 20000,
+          "steps": 1000,
+          "dt": 0.005,
+          "diffusion": 79.4,
+          "features": 250,
+          "seed": 2025,
+          "grid_origin": [
+            0,
+            0
+          ]
+        },
+        "geometry": {
+          "grid_origin": [
+            0,
+            0
+          ],
+          "grid_step": 0.4,
+          "integer_indices": [
+            -50,
+            50
+          ],
+          "coordinate_rule": "(x,y)=(2*i/5,2*j/5), i,j signed integers",
+          "receivers": [
+            [
+              -20.0,
+              -20.0,
+              4.0
+            ],
+            [
+              -20.0,
+              20.0,
+              4.0
+            ],
+            [
+              20.0,
+              -20.0,
+              4.0
+            ],
+            [
+              20.0,
+              20.0,
+              4.0
+            ]
+          ],
+          "tx": [
+            0,
+            0
+          ],
+          "eve_radius": 4,
+          "x_range": [
+            -20,
+            20
+          ],
+          "y_range": [
+            -20,
+            20
+          ],
+          "exclusion": "distance(Tx)>4; distance(each Rx)>8",
+          "split": "validation: (i+j)%5 == 0; training: all remaining feasible points"
+        },
+        "selection": {
+          "checkpoint": "minimum validation physical MSE",
+          "start_candidate": "minimum validation mean Euclidean localization error",
+          "candidate_score_field": "val_mean_error_um",
+          "validation_loss_field": "val_mse_um2",
+          "test_metrics": [
+            "mean_error_um",
+            "median_error_um",
+            "p90_error_um",
+            "success_rate"
+          ],
+          "candidate_train_positions": 428,
+          "candidate_train_repetitions": 30,
+          "candidate_position_fraction": 0.05,
+          "candidate_fraction_denominator": "all feasible SE grid positions",
+          "candidate_count_rule": "ceil(candidate_position_fraction * total_feasible_grid_positions)",
+          "candidate_eligible_positions": "formal training-coordinate split only",
+          "candidate_validation_repetitions": 8,
+          "search_seed": 2026,
+          "final_seed": 2025,
+          "old_optimizer_or_checkpoint_reuse": false,
+          "candidate_coordinates": "Use the proportional count and recursive equal-population spatial strata, with one medoid from each stratum; freeze positions and realization indices across all four models.",
+          "scope": "CNN and DNN model-specific start optimizers and optimized evaluation; CNN fixed and coarse controls only."
+        }
+      }
+    }
+  },
+  "dataset_spec": {
+    "grid_step": 0.4,
+    "train_repeats": 60,
+    "valid_repeats": 15,
+    "test_points": 2000,
+    "molecules": 20000,
+    "steps": 1000,
+    "dt": 0.005,
+    "diffusion": 79.4,
+    "features": 250,
+    "seed": 2025,
+    "grid_origin": [
+      0,
+      0
+    ],
+    "tx": [
+      0.0,
+      0.0
+    ],
+    "receivers": [
+      [
+        -20.0,
+        -20.0,
+        4.0
+      ],
+      [
+        -20.0,
+        20.0,
+        4.0
+      ],
+      [
+        20.0,
+        -20.0,
+        4.0
+      ],
+      [
+        20.0,
+        20.0,
+        4.0
+      ]
+    ],
+    "eve_radius": 4.0,
+    "x_range": [
+      -20.0,
+      20.0
+    ],
+    "y_range": [
+      -20.0,
+      20.0
+    ],
+    "train_positions": 6844,
+    "valid_positions": 1700,
+    "train_rows": 410640,
+    "valid_rows": 25500,
+    "test_rows": 2000,
+    "split": "checkerboard parity=(ix+iy)%5; validation parity=0",
+    "sample_times_s": [
+      0.005,
+      0.025,
+      0.045,
+      0.065,
+      0.085,
+      0.105,
+      0.125,
+      0.145,
+      0.165,
+      0.185,
+      0.20500000000000002,
+      0.225,
+      0.245,
+      0.265,
+      0.28500000000000003,
+      0.305,
+      0.325,
+      0.34500000000000003,
+      0.365,
+      0.385,
+      0.405,
+      0.425,
+      0.445,
+      0.465,
+      0.485,
+      0.505,
+      0.525,
+      0.545,
+      0.5650000000000001,
+      0.585,
+      0.605,
+      0.625,
+      0.645,
+      0.665,
+      0.685,
+      0.705,
+      0.725,
+      0.745,
+      0.765,
+      0.785,
+      0.805,
+      0.8250000000000001,
+      0.85,
+      0.87,
+      0.89,
+      0.91,
+      0.93,
+      0.9500000000000001,
+      0.97,
+      0.99,
+      1.01,
+      1.03,
+      1.05,
+      1.07,
+      1.09,
+      1.11,
+      1.1300000000000001,
+      1.1500000000000001,
+      1.17,
+      1.19,
+      1.21,
+      1.23,
+      1.25,
+      1.27,
+      1.29,
+      1.31,
+      1.33,
+      1.35,
+      1.37,
+      1.3900000000000001,
+      1.41,
+      1.43,
+      1.45,
+      1.47,
+      1.49,
+      1.51,
+      1.53,
+      1.55,
+      1.57,
+      1.59,
+      1.61,
+      1.6300000000000001,
+      1.6500000000000001,
+      1.67,
+      1.69,
+      1.71,
+      1.73,
+      1.75,
+      1.77,
+      1.79,
+      1.81,
+      1.83,
+      1.85,
+      1.87,
+      1.8900000000000001,
+      1.9100000000000001,
+      1.93,
+      1.95,
+      1.97,
+      1.99,
+      2.0100000000000002,
+      2.0300000000000002,
+      2.05,
+      2.07,
+      2.09,
+      2.11,
+      2.13,
+      2.15,
+      2.17,
+      2.19,
+      2.21,
+      2.23,
+      2.25,
+      2.27,
+      2.29,
+      2.31,
+      2.33,
+      2.35,
+      2.37,
+      2.39,
+      2.41,
+      2.43,
+      2.45,
+      2.47,
+      2.49,
+      2.515,
+      2.535,
+      2.555,
+      2.575,
+      2.595,
+      2.615,
+      2.6350000000000002,
+      2.6550000000000002,
+      2.6750000000000003,
+      2.695,
+      2.715,
+      2.735,
+      2.755,
+      2.775,
+      2.795,
+      2.815,
+      2.835,
+      2.855,
+      2.875,
+      2.895,
+      2.915,
+      2.935,
+      2.955,
+      2.975,
+      2.995,
+      3.015,
+      3.035,
+      3.055,
+      3.075,
+      3.095,
+      3.115,
+      3.1350000000000002,
+      3.1550000000000002,
+      3.1750000000000003,
+      3.1950000000000003,
+      3.215,
+      3.235,
+      3.255,
+      3.275,
+      3.295,
+      3.315,
+      3.335,
+      3.355,
+      3.375,
+      3.395,
+      3.415,
+      3.435,
+      3.455,
+      3.475,
+      3.495,
+      3.515,
+      3.535,
+      3.555,
+      3.575,
+      3.595,
+      3.615,
+      3.6350000000000002,
+      3.6550000000000002,
+      3.6750000000000003,
+      3.6950000000000003,
+      3.715,
+      3.735,
+      3.755,
+      3.775,
+      3.795,
+      3.815,
+      3.835,
+      3.855,
+      3.875,
+      3.895,
+      3.915,
+      3.935,
+      3.955,
+      3.975,
+      3.995,
+      4.015,
+      4.035,
+      4.055,
+      4.075,
+      4.095,
+      4.115,
+      4.135,
+      4.155,
+      4.18,
+      4.2,
+      4.22,
+      4.24,
+      4.26,
+      4.28,
+      4.3,
+      4.32,
+      4.34,
+      4.36,
+      4.38,
+      4.4,
+      4.42,
+      4.44,
+      4.46,
+      4.48,
+      4.5,
+      4.5200000000000005,
+      4.54,
+      4.5600000000000005,
+      4.58,
+      4.6000000000000005,
+      4.62,
+      4.64,
+      4.66,
+      4.68,
+      4.7,
+      4.72,
+      4.74,
+      4.76,
+      4.78,
+      4.8,
+      4.82,
+      4.84,
+      4.86,
+      4.88,
+      4.9,
+      4.92,
+      4.94,
+      4.96,
+      4.98,
+      5.0
+    ],
+    "shard_order": "deterministic spatial order; deterministic replica order",
+    "coordinate_dtype": "float64",
+    "source_sha256": {
+      "server_data.py": "d9fb93c42d1926496690078816740a5bd18573d6529e9e59e3f4399a54b7d92e",
+      "generate_4rx_dataset.py": "ba73748ae6a6fcd77a0d973dc37cb65b06b696e20738601e181c889940e6d652",
+      "priority_data.py": "eb256e98012b182c87f68e67483725db0019a72a37889321151a5be86f340cb7",
+      "runtime/geometry.py": "0fdd9be66ac856af81dcbdc7bf331524e2055588e0872524b078a5f0d750c56c"
+    },
+    "position_plan_sha256": "0da87a418deba4e4492eae520978876f1a753e89d8ac14b3cc920735d014785d",
+    "generation_signature": "638b2d260bc16939c1382f33ac0707564b5234eccb561325204fd73388caf798"
+  },
+  "coarse_lengths": [
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225
+  ],
+  "coarse_start_stride": 5,
+  "candidate_position_fraction": 0.05,
+  "candidate_positions": 428,
+  "candidate_train_rows": 12840,
+  "candidate_validation_rows": 3424,
+  "training_loss": "mse_physical_um2",
+  "start_selection_metric": "mean Euclidean validation localization error",
+  "old_results_or_frozen_optimizers_reused": false,
+  "source_sha256": {
+    "experiment_common.py": "838183d21c686aa03f8ce06f2d4559e5e859a0d3e2f4f39fb9e16fd53f56c54b",
+    "priority_data.py": "eb256e98012b182c87f68e67483725db0019a72a37889321151a5be86f340cb7",
+    "experiment_workers.py": "45e8bf0de87081cfd7a9e45596b99eef711c3dd8809d46c97e28835417dda26e",
+    "run_experiment.py": "2d437c4fadddbcb612972e8743fd60c7e669cc0f8ff0733dd5db78ef5d68c426",
+    "position_plan.npz": "0da87a418deba4e4492eae520978876f1a753e89d8ac14b3cc920735d014785d",
+    "candidate_position_plan.json": "a75bc5a623358c8120e5ae555d4ad699e22e2bfc17e5b8b1be1578db094da818",
+    "runtime/generate_4rx_dataset.py": "ba73748ae6a6fcd77a0d973dc37cb65b06b696e20738601e181c889940e6d652",
+    "runtime/geometry.py": "0fdd9be66ac856af81dcbdc7bf331524e2055588e0872524b078a5f0d750c56c",
+    "runtime/npz_io.py": "1a5af47c5e70cf39d481902058bd5fa2014e6a2d193b326062fef1b27fa9389c",
+    "runtime/policy_search.py": "f65acfcf70fb96f5869f576c4dafb7088a7b2a4e554403f76d47e8c10995dca9",
+    "runtime/proportional_position_sampler.py": "acd3086455ff5ddf7d9e3554d4aec34faaafccaedae67b8587bc636ba5f07aeb",
+    "runtime/retest_models_4rx.py": "71b20ede2ac8f814b5a8642a461c6e739eb44105ca7329bb8627abb7aec7fa8c",
+    "runtime/run_experiment_4rx.py": "44e91b2e756a6b5d59f4be043f0653f1dd15aa61cb6f63a40d6751ca63d4c4c8",
+    "runtime/server_data.py": "d9fb93c42d1926496690078816740a5bd18573d6529e9e59e3f4399a54b7d92e"
+  },
+  "resources": {
+    "micro_generation_workers": 14,
+    "full_generation_workers": 10,
+    "max_gpu_workers": 6,
+    "max_full_data_gpu_workers": 3,
+    "max_reserved_gpu_gib": 21.5
+  },
+  "independent_server_root": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026"
+}

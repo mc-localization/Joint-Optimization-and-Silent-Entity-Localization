@@ -1,0 +1,214 @@
+{
+  "status": "passed",
+  "purpose": "fresh_batch256_rerun",
+  "active_main_configs": 40,
+  "training_protocol_blocks": 8,
+  "batch_selector_checks": 10000,
+  "batch_size": 256,
+  "long_window_batch_size": 256,
+  "training_started": false,
+  "original_source_files_unchanged": true,
+  "historical_reference_data_unchanged": true,
+  "other_hyperparameters_unchanged": true,
+  "training_changes": [
+    {
+      "path": "configs\\main\\cnn_l100.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\cnn_l150.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\cnn_l200.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\cnn_l250.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\cnn_l50.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\gru_l100.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\gru_l125.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\gru_l150.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\gru_l175.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\gru_l200.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\gru_l225.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\gru_l25.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\gru_l250.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\gru_l50.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\gru_l75.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\transformer_l100.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\transformer_l150.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\transformer_l200.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\transformer_l250.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "configs\\main\\transformer_l50.json.configuration.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "experiment\\deployment_protocol.json.cases.cnn.final_cfg.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "experiment\\deployment_protocol.json.cases.cnn.search_cfg.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "experiment\\deployment_protocol.json.cases.dnn.final_cfg.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "experiment\\deployment_protocol.json.cases.dnn.search_cfg.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "experiment\\gru_protocol.json.case.final_cfg.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "experiment\\gru_protocol.json.case.search_cfg.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "experiment\\transformer_protocol.json.case.final_cfg.training.batch_size",
+      "before": 1024,
+      "after": 256
+    },
+    {
+      "path": "experiment\\transformer_protocol.json.case.search_cfg.training.batch_size",
+      "before": 1024,
+      "after": 256
+    }
+  ],
+  "accepted_dnn_l25_20261102": {
+    "status": "passed",
+    "accuracy_percent": 37.25,
+    "epochs_completed": 30,
+    "best_epoch": 20,
+    "patience": 10,
+    "unchanged_main_rows": 49,
+    "all_50_rows_recomputed": true,
+    "figure": "fig05.png"
+  },
+  "early_stopping_policy_20261102": {
+    "passed": true,
+    "regular_configs_checked": 40,
+    "regular_patience": 10,
+    "curve_patience": 61,
+    "curve_driver_sources_unchanged": true,
+    "curve_training_calls": [
+      {
+        "file": "convergence_l50_workers.py",
+        "line": 38
+      },
+      {
+        "file": "convergence_seed2034_workers.py",
+        "line": 38
+      },
+      {
+        "file": "dnn10_matched_cnn50.py",
+        "line": 112
+      },
+      {
+        "file": "dnn10_width100_cnn50.py",
+        "line": 112
+      },
+      {
+        "file": "dnn_depth_l250.py",
+        "line": 73
+      },
+      {
+        "file": "paper_suite_workers.py",
+        "line": 68
+      }
+    ],
+    "reference_results_unchanged": true,
+    "paper_unchanged": true,
+    "l250_no_full60_model_reuse": true,
+    "behavior": {
+      "regular": {
+        "patience": 10,
+        "epochs_completed": 11,
+        "best_epoch": 1
+      },
+      "curve": {
+        "patience": 61,
+        "epochs_completed": 60,
+        "best_epoch": 1
+      },
+      "passed": true
+    }
+  }
+}

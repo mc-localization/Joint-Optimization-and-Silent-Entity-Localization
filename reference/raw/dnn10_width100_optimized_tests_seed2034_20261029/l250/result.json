@@ -1,0 +1,31 @@
+{
+  "length": 250,
+  "start": 1,
+  "seed": 2034,
+  "batch_size": 256,
+  "lr": 0.001,
+  "epochs": 60,
+  "early_stopping": false,
+  "hidden_dims": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "parameters": 195202,
+  "best_validation_mse_um2": 0.5786646198945887,
+  "best_validation_epoch": 15,
+  "training_seconds": 1555.2648296132684,
+  "reused_checkpoint": false,
+  "checkpoint": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/ablations/dnn10_width100_l250_seed2034_20261029/deep/checkpoints/checkpoints/dnn10_cnn50_budget60_dnn_l250_s1_seed2034_1aab5f5b101c8d1c.pt",
+  "checkpoint_sha256": "0a1e152b1941fc1659b4517595635c1fd862551a30a184ed44998312467fbf18",
+  "curve_sha256": "97096bba49e278b19d351aaf9681d846af635db75d3c6e2ca965001d4ed68a84",
+  "reused_existing_l250": true,
+  "optimizer_sha256": "19d53f28366db5be258054fd0ba6d892e5cf39299b266955330e25f2fb3db82e"
+}

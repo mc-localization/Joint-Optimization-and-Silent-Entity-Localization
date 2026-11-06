@@ -1,0 +1,46 @@
+{
+  "lengths": [
+    50,
+    75,
+    150,
+    200,
+    250
+  ],
+  "seed": 2034,
+  "batch_size": 256,
+  "lr": 0.001,
+  "epochs": 60,
+  "early_stopping": false,
+  "reuse_existing_training": true,
+  "new_dnn_source": "dnn10_width100_optimized_tests_seed2034_20261029",
+  "reference_curve_sha256": {
+    "50": {
+      "cnn": "7957b3664ae069e0e0739cf7d7565558c4145f2f4215f0e89867a1f849ab3a5d",
+      "gru": "5e26f8adfd57334932425c8a1fbb04ad8c56778c3548c4491ca8760d2b343ebd",
+      "transformer": "1ff84c83b6cbd69edd2400dbfe1efa838d08d15e89157407f5258af4089b770b"
+    },
+    "75": {
+      "cnn": "874543c62207d3c325b6ce9d5df33f7e9e30e2ab0e08f5aa48dfa77ca9ec1b6c",
+      "gru": "f4c43f1905be09e37fc3cac00c3c73722420d0be810cda4eab677313f1d198ca",
+      "transformer": "960c5011ca95e8de4e2d8290f022b687d430615f2c5cc8c73821cfdc5d0474cc"
+    },
+    "150": {
+      "cnn": "9f512c709fc536b9fc8b4d7ec046b254e355eeab15e43d7c66175e489fc88143",
+      "gru": "2fb26c132178140f36fd4e804dc0e924e92a74f903ce944e56355a0dc3c9941b",
+      "transformer": "49ea7b67068fcca6e2c784452125c05469f8a5fd98f04b192a2a57388e88a3f5"
+    },
+    "200": {
+      "cnn": "95133b231963cd4d2c92dc5b6a838911fe10b35b9846d8bfc8bc650a778f81b4",
+      "gru": "3742e60772b3a917dc35cfb68d53d3df8301c00407da883d00f124467abc94a6",
+      "transformer": "ae0a4dac3edf35022e41439a6cdef7fbe486725ea0e12a3862a8f84c2086c6b1"
+    },
+    "250": {
+      "cnn": "28769df9e1073878585f9fedf29054cd263865109b2e7cffc16c5055013c0dd4",
+      "gru": "9db212d1a1988fa714337a6ec3f19a82c9ca85e3c6b95570075391e6dfbf9eb2",
+      "transformer": "494eec1d94fb883589d13515de0636c5da2d185a943d06edf16b1b97d3b7bd47"
+    }
+  },
+  "source_sha256": {
+    "fig7_dnn10_four_models.py": "901afc132539ed066cdbdc6338c7fdef2dcb3b96aa23eb58216056d7045b7596"
+  }
+}

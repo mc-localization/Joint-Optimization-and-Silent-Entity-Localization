@@ -1,0 +1,32 @@
+{
+  "model": "gru",
+  "length": 100,
+  "start": 72,
+  "seed": 2026,
+  "previous_seed": 2025,
+  "batch_size": 256,
+  "lr": 0.001,
+  "max_epochs": 60,
+  "patience": 10,
+  "optimizer_sha256": "1f635c0638bc4566f713b75b69729a0ec0a11748f80b60edd6356ff1a6602b22",
+  "test_sha256": "72d0b7a61c54c991a388baa4e738c3850830fa8521b4ab21cbec2228c252c014",
+  "source_sha256": {
+    "gru_l100_seed2026_retest_20261029.py": "89a567f7f80b288162ca95d5703e94f40ede440c79b64ba562f48f0b1596b826",
+    "experiment_common.py": "838183d21c686aa03f8ce06f2d4559e5e859a0d3e2f4f39fb9e16fd53f56c54b",
+    "experiment_workers.py": "45e8bf0de87081cfd7a9e45596b99eef711c3dd8809d46c97e28835417dda26e",
+    "batch256_revision18_parallel.py": "406823eea6536056d78c0081eadf79f56095b4f48b34d6d6792e7a2548b6a650",
+    "runtime/run_experiment_4rx.py": "44e91b2e756a6b5d59f4be043f0653f1dd15aa61cb6f63a40d6751ca63d4c4c8",
+    "runtime/retest_models_4rx.py": "71b20ede2ac8f814b5a8642a461c6e739eb44105ca7329bb8627abb7aec7fa8c"
+  },
+  "frozen_files_sha256": {
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/batch256_revision18_retests_20261029/fits/fit_base_gru_l100_s72/training_config.json": "cc280a26586d0e1fa47274cd49b1bb9af73e7cd09df02fb11d87b8c8c9b74f98",
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/batch256_revision18_retests_20261029/results/base_gru_optimized_l100/final_test.csv": "69ea7c01f0ea0dbb6c5c427fbc63ae5947e22716f8fcd66f2bdc1c8b9d738ebe",
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/batch256_revision18_retests_20261029/results/base_gru_optimized_l100/result.json": "2d655f58e1d4d81d324ec92d70069c5de9fccb364e414bc8d691cf3e6afd51bb",
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/batch256_revision18_retests_20261029/results/base_gru_optimized_l100/predictions.npz": "a2817e22a864b57432ba64c4640b373585b55643995b212d124f1434637a57f1",
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/search/gru/frozen_optimizer.json": "f093f9a78f15adab33bddf90f700cefdb3385244f1d3a9997249bde8c6f11e3c",
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/search/gru/policy_raw.pt": "1f635c0638bc4566f713b75b69729a0ec0a11748f80b60edd6356ff1a6602b22",
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/data/independent_test.npz": "72d0b7a61c54c991a388baa4e738c3850830fa8521b4ab21cbec2228c252c014"
+  },
+  "replace_paper_automatically": false,
+  "old_results_preserved": true
+}

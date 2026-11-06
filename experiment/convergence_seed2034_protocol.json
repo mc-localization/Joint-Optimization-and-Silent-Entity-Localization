@@ -1,0 +1,38 @@
+{
+  "lengths": [
+    50,
+    75,
+    150,
+    200,
+    250
+  ],
+  "models": [
+    "cnn",
+    "dnn",
+    "gru",
+    "transformer"
+  ],
+  "seed": 2034,
+  "baseline_seed": 2025,
+  "batch_size": 256,
+  "epochs": 60,
+  "early_stopping": false,
+  "deterministic": false,
+  "loss": "mse_physical_um2",
+  "optimizer_reused": true,
+  "priority": "lowest; wait for all existing paper figures",
+  "barrier_dependencies": [
+    "figure_fig6",
+    "figure_fig7",
+    "figure_fig7_l50",
+    "figure_fig11",
+    "figure_fig12",
+    "figure_fig13"
+  ],
+  "output_directory": "paper_figures/fig7_seed2034",
+  "max_parallel_gpu_tasks": 6,
+  "source_sha256": {
+    "convergence_seed2034_workers.py": "ae2043d6a8be64c3ddc16554367d5ccbfeb6e11466b71d1def9a7fe902a413d9",
+    "run_with_convergence_seed2034.py": "319ebede328e5ef01eaa32fafa3b29f0849157b42e22c5bea69cdf865933a024"
+  }
+}

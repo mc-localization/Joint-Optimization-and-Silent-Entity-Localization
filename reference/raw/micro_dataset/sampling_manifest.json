@@ -1,0 +1,14 @@
+{
+  "generation_signature": "638b2d260bc16939c1382f33ac0707564b5234eccb561325204fd73388caf798",
+  "candidate_position_plan_sha256": "a75bc5a623358c8120e5ae555d4ad699e22e2bfc17e5b8b1be1578db094da818",
+  "positions": 428,
+  "actual_samples": 12840,
+  "validation_samples": 3424,
+  "train_validation_sample_overlap": 0,
+  "fraction": 0.05,
+  "fraction_denominator": "all feasible grid positions",
+  "artifacts_sha256": {
+    "micro_train.npz": "42c986020656e0db9beb008291b2cece795c5d143e2a119610e285f0105a6124",
+    "micro_valid.npz": "f9015558ece51c80aa18186f4add7bb269bb8960eef663765444271546d4cd93"
+  }
+}

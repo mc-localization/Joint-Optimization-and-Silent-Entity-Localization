@@ -1,0 +1,30 @@
+{
+  "regular_localization": {
+    "models": [
+      "cnn",
+      "dnn",
+      "gru",
+      "transformer"
+    ],
+    "max_epochs": 60,
+    "patience": 10,
+    "monitor": "validation physical MSE",
+    "min_delta": 1e-07,
+    "checkpoint": "best validation model"
+  },
+  "curve_experiments": {
+    "max_epochs": 60,
+    "patience": 61,
+    "early_stopping": false,
+    "drivers": [
+      "convergence_l50_workers.py",
+      "convergence_seed2034_workers.py",
+      "paper_suite_workers.py",
+      "dnn_depth_l250.py",
+      "dnn10_matched_cnn50.py",
+      "dnn10_width100_cnn50.py"
+    ],
+    "note": "Includes historical architecture-comparison training/validation curves."
+  },
+  "data_status": "Existing measured reference results unchanged; new training required where old runs did not use early stopping."
+}

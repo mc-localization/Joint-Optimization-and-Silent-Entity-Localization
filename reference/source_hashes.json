@@ -1,0 +1,226 @@
+[
+  {
+    "path": "experiment/batch256_l50_repeat2_20261029.py",
+    "sha256": "8b2e720ddbcf72027bc4e7c62e413d41eeacb75f568a880871f667aa4378a78b"
+  },
+  {
+    "path": "experiment/batch256_l50_seed2026_20261029.py",
+    "sha256": "25ccbe920cc796729e3bf2b912f45df242e498f191d13f19590be7209113b60f"
+  },
+  {
+    "path": "experiment/batch256_revision18_parallel.py",
+    "sha256": "406823eea6536056d78c0081eadf79f56095b4f48b34d6d6792e7a2548b6a650"
+  },
+  {
+    "path": "experiment/batch256_seed2033_reuse_optimizer_20261028/controller.py",
+    "sha256": "52f9e39beaac17afd64ed3a4dfb90a28a996ab66289dc0bb687961b2d01f1639"
+  },
+  {
+    "path": "experiment/batch256_seed2033_reuse_optimizer_20261028/experiment_common.py",
+    "sha256": "838183d21c686aa03f8ce06f2d4559e5e859a0d3e2f4f39fb9e16fd53f56c54b"
+  },
+  {
+    "path": "experiment/batch256_seed2033_reuse_optimizer_20261028/workers.py",
+    "sha256": "338d4b60423efc27cd255b87ec3968b9d597c68e7e19f52db6def5b27af345ec"
+  },
+  {
+    "path": "experiment/cnn_l225_seed2035_pair.py",
+    "sha256": "6cb68ee7b581540b37a012e9f38f10d91d0b8cc064045e5bd6093df1febaacde"
+  },
+  {
+    "path": "experiment/convergence_l50_workers.py",
+    "sha256": "29b618d1cdff48d6dc0b32307e944fc7f14f2da9ddda274a624ff6220c0d938a"
+  },
+  {
+    "path": "experiment/convergence_seed2034_workers.py",
+    "sha256": "ae2043d6a8be64c3ddc16554367d5ccbfeb6e11466b71d1def9a7fe902a413d9"
+  },
+  {
+    "path": "experiment/dnn10_l25_seed2035_retest_20261029.py",
+    "sha256": "cdaa32e2266c8b44434681c201f061d4652ee57f0be8e63a5685faf2f64f3a1f"
+  },
+  {
+    "path": "experiment/dnn10_matched_cnn50.py",
+    "sha256": "9ed4654f483e807df0294efb6c5562161c35c76ddcb458100cc46bec781e5dac"
+  },
+  {
+    "path": "experiment/dnn10_optimized_tests.py",
+    "sha256": "c38004e68777a9fd2b1038e9aee00e9c00967614bbeeaf59243f51061f9b62e1"
+  },
+  {
+    "path": "experiment/dnn10_optimizer_parallel.py",
+    "sha256": "dc70299863930451b886ed1df1aac45ff2c48f5bdc4c9b4a537599529a513af2"
+  },
+  {
+    "path": "experiment/dnn10_width100_cnn50.py",
+    "sha256": "f760b98dea47c6beaa1a51efaf501e087f349adaf2f6aefb764b091358df9dbe"
+  },
+  {
+    "path": "experiment/dnn_depth_l250.py",
+    "sha256": "ed08e544fc73b02a32764ad3766bc8f4d7a5fa39ae7e517fce27ddd4cfb194c7"
+  },
+  {
+    "path": "experiment/experiment_common.py",
+    "sha256": "838183d21c686aa03f8ce06f2d4559e5e859a0d3e2f4f39fb9e16fd53f56c54b"
+  },
+  {
+    "path": "experiment/experiment_workers.py",
+    "sha256": "45e8bf0de87081cfd7a9e45596b99eef711c3dd8809d46c97e28835417dda26e"
+  },
+  {
+    "path": "experiment/fig7_dnn10_four_models.py",
+    "sha256": "901afc132539ed066cdbdc6338c7fdef2dcb3b96aa23eb58216056d7045b7596"
+  },
+  {
+    "path": "experiment/gru_l100_seed2026_retest_20261029.py",
+    "sha256": "89a567f7f80b288162ca95d5703e94f40ede440c79b64ba562f48f0b1596b826"
+  },
+  {
+    "path": "experiment/gru_preflight.py",
+    "sha256": "02e38f8fad4642dadb28bc7af8fe213a4a3664338f78bb8d922ee6e1c6fed788"
+  },
+  {
+    "path": "experiment/gru_workers.py",
+    "sha256": "a3b169cde95eb70c84bb8f8e71e8edd2d90f610a15639f2d27b6021bc2f509d2"
+  },
+  {
+    "path": "experiment/mle_likelihood_original.py",
+    "sha256": "c391a458dee0385d58bf76bcea8c73577410f51c05f1a2c3f35ef73408cdf5d4"
+  },
+  {
+    "path": "experiment/paper_suite_figures.py",
+    "sha256": "2ef3ed6a4c8883563002f5316b03bf45afbcb0326f5173eb621d4c41b021d338"
+  },
+  {
+    "path": "experiment/paper_suite_preflight.py",
+    "sha256": "46cc2a7bfaba7b78455c1bd9e3e0cf60d3a68a8c6987ef6cc74348d6c548cb50"
+  },
+  {
+    "path": "experiment/paper_suite_queue.py",
+    "sha256": "e77bb4ae75181cb63c2eece0e3c04e27c8009a5b37dd1017c41ea310b9bbf622"
+  },
+  {
+    "path": "experiment/paper_suite_workers.py",
+    "sha256": "39b3f460025737ee66671aea66fbdf12884af23932aa891937efdc8ba3ffe2f9"
+  },
+  {
+    "path": "experiment/prepare_future_data.py",
+    "sha256": "3addd09ddfcfe1649cac7a987abdcb090dd9a36b6ed2c3ca018e4252bb2ab803"
+  },
+  {
+    "path": "experiment/prepare_future_data_adaptive.py",
+    "sha256": "0619de3a61a50e14213be68fd36e23007eb2a2f63d7c2e6b06ab300cb1bc6e62"
+  },
+  {
+    "path": "experiment/prepare_future_data_parallel.py",
+    "sha256": "acf4eba7812ef88a022a2c69b83ffe9a99ae5295b8ac8cc31546f3a62f5616ec"
+  },
+  {
+    "path": "experiment/prepare_future_data_precision.py",
+    "sha256": "83da46f193ded8eb0592031f6e4465604b7a74cb08ee7af6972d02a3b208704b"
+  },
+  {
+    "path": "experiment/prepare_remaining_experiments.py",
+    "sha256": "6efe4d475fa09ea1819cad7c79ddae4e10dd1808745a6ccfbec12db3ba5a9b97"
+  },
+  {
+    "path": "experiment/priority_data.py",
+    "sha256": "eb256e98012b182c87f68e67483725db0019a72a37889321151a5be86f340cb7"
+  },
+  {
+    "path": "experiment/remaining_parameter_workers.py",
+    "sha256": "ca4cddd6ff868f782775ba6fd06dbbde5f9bc534dc907b0f0bd9223bfcfc4bda"
+  },
+  {
+    "path": "experiment/run_coarse_four.py",
+    "sha256": "a93d8c02b68e80c7eb2e28512136eb3642c38c69080fce7ea17f50b40ad2341f"
+  },
+  {
+    "path": "experiment/run_experiment.py",
+    "sha256": "2d437c4fadddbcb612972e8743fd60c7e669cc0f8ff0733dd5db78ef5d68c426"
+  },
+  {
+    "path": "experiment/run_mle_current.py",
+    "sha256": "75669090dee02464a81a681459ed5e00dfd85b2de9ced063c994586361276d2a"
+  },
+  {
+    "path": "experiment/run_paper_suite.py",
+    "sha256": "299c897631796e0eec12cc783bfcc979ce987f8948a9ea7ddd5a3f288c247ab4"
+  },
+  {
+    "path": "experiment/run_parallel.py",
+    "sha256": "04b17530a5b5a35b5aa56395668576081de324c68fbd4012ad4eec5be6356cb4"
+  },
+  {
+    "path": "experiment/run_remaining_paper_experiments.py",
+    "sha256": "6b8f9dbc6a224109fb3493d4ecf97819961fea4f9800d37ce5960b2ed9d468f5"
+  },
+  {
+    "path": "experiment/run_selected_lengths.py",
+    "sha256": "f79d3d5be800db7b0ab77703209691386153063c0c8e63fa4b328aaea2d8bf60"
+  },
+  {
+    "path": "experiment/run_transformer_parallel.py",
+    "sha256": "696866dfa59599ac09e4ec5500e065db35f5e6817a030833c3cd5ccb89c7b299"
+  },
+  {
+    "path": "experiment/run_with_convergence_l50.py",
+    "sha256": "00beeaa830c3156955c475e8b02dfcefb74cc2cc856727d1fa67a77cb859e722"
+  },
+  {
+    "path": "experiment/run_with_convergence_seed2034.py",
+    "sha256": "319ebede328e5ef01eaa32fafa3b29f0849157b42e22c5bea69cdf865933a024"
+  },
+  {
+    "path": "experiment/run_with_gru.py",
+    "sha256": "c9b48023c1b8650dbb861649201ce6b27711d97c2dbb8130ec7d26f66c715ae2"
+  },
+  {
+    "path": "experiment/run_with_transformer.py",
+    "sha256": "446c60f21b6307e0acda26dcc633fc9bf3cc479ba200d62eaef34310a7824a05"
+  },
+  {
+    "path": "experiment/runtime/generate_4rx_dataset.py",
+    "sha256": "ba73748ae6a6fcd77a0d973dc37cb65b06b696e20738601e181c889940e6d652"
+  },
+  {
+    "path": "experiment/runtime/geometry.py",
+    "sha256": "0fdd9be66ac856af81dcbdc7bf331524e2055588e0872524b078a5f0d750c56c"
+  },
+  {
+    "path": "experiment/runtime/npz_io.py",
+    "sha256": "1a5af47c5e70cf39d481902058bd5fa2014e6a2d193b326062fef1b27fa9389c"
+  },
+  {
+    "path": "experiment/runtime/policy_search.py",
+    "sha256": "f65acfcf70fb96f5869f576c4dafb7088a7b2a4e554403f76d47e8c10995dca9"
+  },
+  {
+    "path": "experiment/runtime/proportional_position_sampler.py",
+    "sha256": "acd3086455ff5ddf7d9e3554d4aec34faaafccaedae67b8587bc636ba5f07aeb"
+  },
+  {
+    "path": "experiment/runtime/retest_models_4rx.py",
+    "sha256": "71b20ede2ac8f814b5a8642a461c6e739eb44105ca7329bb8627abb7aec7fa8c"
+  },
+  {
+    "path": "experiment/runtime/run_experiment_4rx.py",
+    "sha256": "44e91b2e756a6b5d59f4be043f0653f1dd15aa61cb6f63a40d6751ca63d4c4c8"
+  },
+  {
+    "path": "experiment/runtime/server_data.py",
+    "sha256": "d9fb93c42d1926496690078816740a5bd18573d6529e9e59e3f4399a54b7d92e"
+  },
+  {
+    "path": "experiment/server_preflight.py",
+    "sha256": "8c89d309cd330d31dfe23c9fa84e5009fa0ce244413d00fb7b7fcc6d7c2dde45"
+  },
+  {
+    "path": "experiment/transformer_preflight.py",
+    "sha256": "e144c3532f9118b4111b547433da264c79f489cc36b3f516edea38aae38bbe6e"
+  },
+  {
+    "path": "experiment/transformer_workers.py",
+    "sha256": "7edc208104b41af4af9d62e115d3f169fb6507345cae2a0cd519b24a36dc83b3"
+  }
+]

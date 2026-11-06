@@ -1,0 +1,48 @@
+{
+  "architecture": "ten_hidden_layers_width100",
+  "hidden_dims": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "candidate_batch_size": 256,
+  "candidate_seed": 2026,
+  "candidate_lr": 0.001,
+  "candidate_max_epochs": 60,
+  "candidate_patience": 10,
+  "search_rounds": 10,
+  "lengths_per_round": 6,
+  "search_length_pool": [
+    1,
+    249
+  ],
+  "candidate_groups": {
+    "perturb": 4,
+    "local": 6,
+    "random": 4
+  },
+  "candidate_position_fraction": 0.05,
+  "candidate_positions": 428,
+  "training_repetitions": 30,
+  "validation_repetitions": 8,
+  "policy_hidden_dims": [
+    64,
+    64
+  ],
+  "policy_lr": 0.003,
+  "policy_max_steps_per_round": 1000,
+  "max_shared_parallel_localizer_fits": 6,
+  "existing_l250_run_counted": true,
+  "independent_output_directory": "start_optimizer_dnn10_width100_20261029",
+  "formal_tests_automatically_scheduled": false,
+  "source_sha256": {
+    "dnn10_optimizer_parallel.py": "dc70299863930451b886ed1df1aac45ff2c48f5bdc4c9b4a537599529a513af2"
+  }
+}

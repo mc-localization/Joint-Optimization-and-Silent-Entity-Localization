@@ -1,0 +1,42 @@
+{
+  "architecture": "ten_layers_width100",
+  "lengths": [
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250
+  ],
+  "new_training_lengths": [
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225
+  ],
+  "reuse_l250": true,
+  "seed": 2034,
+  "batch_size": 256,
+  "lr": 0.001,
+  "epochs": 60,
+  "early_stopping": false,
+  "checkpoint_selection": "minimum validation physical MSE",
+  "optimizer_retrained": false,
+  "optimizer_sha256": "19d53f28366db5be258054fd0ba6d892e5cf39299b266955330e25f2fb3db82e",
+  "frozen_optimizer_record_sha256": "27e3a14210b38e0d9e61abad30bad281f1c794381e400c3943f252774fe7a6b2",
+  "test_sha256": "72d0b7a61c54c991a388baa4e738c3850830fa8521b4ab21cbec2228c252c014",
+  "max_shared_parallel_fits": 6,
+  "independent_output_directory": "dnn10_width100_optimized_tests_seed2034_20261029",
+  "source_sha256": {
+    "dnn10_optimized_tests.py": "c1c3bd5416aebf8e4d2b9a37919df60ea65db454dc82fe30f250361c3623f87d"
+  }
+}

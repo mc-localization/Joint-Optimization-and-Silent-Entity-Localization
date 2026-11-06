@@ -1,0 +1,24 @@
+{
+  "created_at_utc": "2026-10-28T05:45:51.364983+00:00",
+  "remaining_cases": [
+    "m125",
+    "m375",
+    "m500",
+    "rx2m250"
+  ],
+  "figures": [
+    12,
+    13
+  ],
+  "batch_size_all_lengths": 256,
+  "search_localizer_seed": 2026,
+  "formal_localizer_seed": 2025,
+  "deterministic": false,
+  "condition_specific_start_optimizer_training": true,
+  "baseline_results_reused": true,
+  "accepted_main_comparison_source": "Local user-confirmed per-length table; do not overwrite original baseline CSVs",
+  "source_sha256": {
+    "remaining_parameter_workers.py": "ca4cddd6ff868f782775ba6fd06dbbde5f9bc534dc907b0f0bd9223bfcfc4bda",
+    "run_remaining_paper_experiments.py": "6b8f9dbc6a224109fb3493d4ecf97819961fea4f9800d37ce5960b2ed9d468f5"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "length": 100,
+  "start": 92,
+  "seed": 2034,
+  "batch_size": 256,
+  "lr": 0.001,
+  "epochs": 60,
+  "early_stopping": false,
+  "best_validation_mse_um2": 0.8099242116142722,
+  "best_validation_epoch": 20,
+  "training_seconds": 1695.6517750918865,
+  "checkpoint": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/dnn10_width100_optimized_tests_seed2034_20261029/l100/checkpoints/checkpoints/dnn10_optimized_full60_dnn_l100_s92_seed2034_f63011bf57d9181c.pt",
+  "checkpoint_sha256": "f5c887a780606f343462c1a77c28627ef6bdbbdeae544e92c83cf7251c79b9ba",
+  "curve_sha256": "b1edebd9e259d5e665f7b0bf9780073ad3349b20ff57f445554ac30ab9ec375c",
+  "reused_checkpoint": false,
+  "optimizer_sha256": "19d53f28366db5be258054fd0ba6d892e5cf39299b266955330e25f2fb3db82e"
+}

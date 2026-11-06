@@ -1,0 +1,5 @@
+# Preserve exact bytes for source and artifact SHA-256 verification across OSes.
+* -text
+*.npz binary
+*.pt binary
+*.png binary

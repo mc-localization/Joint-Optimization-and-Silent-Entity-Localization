@@ -1,0 +1,50 @@
+{
+  "remote_directory": "/root/autodl-tmp/paper_release_20261101",
+  "file_hashes_verified": 406,
+  "original_sources_unchanged": 56,
+  "reference": {
+    "exact_source_files": 56,
+    "main_result_rows": 50,
+    "metrics_checked": 150,
+    "passed": true
+  },
+  "smoke": {
+    "device": "cpu",
+    "training_epochs_per_model": 1,
+    "models": {
+      "cnn": {
+        "parameters_l50": 108290,
+        "one_epoch_validation_mse_um2": 51.448387145996094,
+        "seconds": 0.19738128036260605
+      },
+      "dnn": {
+        "parameters_l50": 113602,
+        "one_epoch_validation_mse_um2": 113.16078186035156,
+        "seconds": 0.009120680391788483
+      },
+      "gru": {
+        "parameters_l50": 112578,
+        "one_epoch_validation_mse_um2": 77.27560424804688,
+        "seconds": 0.17057768255472183
+      },
+      "transformer": {
+        "parameters_l50": 113619,
+        "one_epoch_validation_mse_um2": 68.20668029785156,
+        "seconds": 0.2686998099088669
+      }
+    },
+    "policy_parameters": 4353,
+    "feasible_start_checks": 1250,
+    "mle_inference": true,
+    "particle_simulator": true
+  },
+  "python": "3.12.3",
+  "validation": "passed",
+  "train_entrypoint_smoke": {
+    "passed": true,
+    "train_rows": 64,
+    "validation_rows": 32,
+    "test_rows": 32,
+    "epochs": 1
+  }
+}

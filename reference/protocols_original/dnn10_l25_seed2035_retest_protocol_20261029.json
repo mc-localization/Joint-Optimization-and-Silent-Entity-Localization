@@ -1,0 +1,33 @@
+{
+  "model": "dnn",
+  "architecture": "ten_layers_width100",
+  "length": 25,
+  "start": 110,
+  "seed": 2035,
+  "previous_seed": 2034,
+  "batch_size": 256,
+  "lr": 0.001,
+  "epochs": 60,
+  "early_stopping": false,
+  "frozen_optimizer_record": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/start_optimizer_dnn10_width100_20261029/search/frozen_optimizer.json",
+  "optimizer_sha256": "19d53f28366db5be258054fd0ba6d892e5cf39299b266955330e25f2fb3db82e",
+  "previous_accuracy08_percent": 40.400000000000006,
+  "previous_mean_error_um": 1.2274204540038653,
+  "source_sha256": {
+    "dnn10_l25_seed2035_retest_20261029.py": "7854808c80eeda5b01919dd8b39bfc8b2d340b90d0fd07c41f011e543ff36da0",
+    "dnn10_width100_cnn50.py": "f760b98dea47c6beaa1a51efaf501e087f349adaf2f6aefb764b091358df9dbe",
+    "experiment_workers.py": "45e8bf0de87081cfd7a9e45596b99eef711c3dd8809d46c97e28835417dda26e",
+    "experiment_common.py": "838183d21c686aa03f8ce06f2d4559e5e859a0d3e2f4f39fb9e16fd53f56c54b",
+    "runtime/run_experiment_4rx.py": "44e91b2e756a6b5d59f4be043f0653f1dd15aa61cb6f63a40d6751ca63d4c4c8",
+    "runtime/retest_models_4rx.py": "71b20ede2ac8f814b5a8642a461c6e739eb44105ca7329bb8627abb7aec7fa8c"
+  },
+  "frozen_files_sha256": {
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/dnn10_width100_optimized_tests_seed2034_20261029/l25/training_config.json": "3450436eb2f1b8acb3dcdd7d7d0639e21cf4029f0172cf2359bcc36d95e1de49",
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/dnn10_width100_optimized_tests_seed2034_20261029/l25/final_test.csv": "7651e38cf648ad74ec1fec0128343937b3172e9a506b7a6f1aee5df0a1ff33b9",
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/dnn10_width100_optimized_tests_seed2034_20261029/l25/predictions.npz": "9c16d288e07461c1960e6e8271be5b8eccc73b70ec6e177bcc3f8170b5391c4a",
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/start_optimizer_dnn10_width100_20261029/search/frozen_optimizer.json": "27e3a14210b38e0d9e61abad30bad281f1c794381e400c3943f252774fe7a6b2",
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/start_optimizer_dnn10_width100_20261029/search/policy_raw.pt": "19d53f28366db5be258054fd0ba6d892e5cf39299b266955330e25f2fb3db82e",
+    "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/data/independent_test.npz": "72d0b7a61c54c991a388baa4e738c3850830fa8521b4ab21cbec2228c252c014"
+  },
+  "replace_paper_automatically": false
+}

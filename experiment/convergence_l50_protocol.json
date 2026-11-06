@@ -1,0 +1,24 @@
+{
+  "created_at_utc": "2026-10-28T05:58:05.512073+00:00",
+  "length": 50,
+  "models": [
+    "cnn",
+    "dnn",
+    "gru",
+    "transformer"
+  ],
+  "epochs": 60,
+  "early_stopping": false,
+  "batch_size": 256,
+  "seed": 2025,
+  "loss": "mse_physical_um2",
+  "deterministic": false,
+  "optimizer_reused": true,
+  "output_directory": "paper_figures/fig7_l50",
+  "previous_l100_preserved": true,
+  "max_parallel_gpu_tasks": 6,
+  "source_sha256": {
+    "convergence_l50_workers.py": "29b618d1cdff48d6dc0b32307e944fc7f14f2da9ddda274a624ff6220c0d938a",
+    "run_with_convergence_l50.py": "00beeaa830c3156955c475e8b02dfcefb74cc2cc856727d1fa67a77cb859e722"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "length": 225,
+  "seed": 2035,
+  "batch_size": 256,
+  "lr": 0.001,
+  "max_epochs": 60,
+  "patience": 10,
+  "starts": {
+    "fixed": 1,
+    "optimized": 21
+  },
+  "optimizer_sha256": "04ce6a5ac09adca943732ded0fe37c0280c68bdd1294447e667b831defc47864",
+  "optimizer_retrained": false,
+  "replace_current_figure9_automatically": false,
+  "max_parallel_fits": 2,
+  "source_sha256": {
+    "cnn_l225_seed2035_pair.py": "6cb68ee7b581540b37a012e9f38f10d91d0b8cc064045e5bd6093df1febaacde"
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "paths": {
+    "data_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/data",
+    "checkpoint_cache_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/cnn_l225_seed2035_fixed_vs_optimized_20261029/fixed/checkpoints",
+    "output_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/results/cnn",
+    "micro_dataset_dir": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/micro_dataset"
+  },
+  "data": {
+    "input_mode": "increment",
+    "M": 250,
+    "source_M": 250,
+    "n_rx": 4,
+    "molecules": 20000,
+    "sample_seed": 2025,
+    "search_train_samples": 12840,
+    "search_valid_samples": 3424,
+    "final_train_samples": 410640,
+    "final_valid_samples": 25500,
+    "precompute_windows": true,
+    "max_precompute_bytes": 3221225472,
+    "readiness_file": "/root/autodl-tmp/end_server_20261010/experiments/rx20_grid04_mse_20261026/preflight/readiness.json",
+    "dataset_protocol_sha256": "638b2d260bc16939c1382f33ac0707564b5234eccb561325204fd73388caf798"
+  },
+  "training": {
+    "loss": "mse_physical_um2",
+    "seed": 2035,
+    "device": "cuda",
+    "batch_size": 256,
+    "long_window_threshold": 150,
+    "long_window_batch_size": 256,
+    "num_workers": 0,
+    "lr": 0.001,
+    "amp": true,
+    "deterministic": false,
+    "search_epochs": 60,
+    "search_patience": 10,
+    "final_epochs": 60,
+    "final_patience": 10
+  },
+  "evaluation": {
+    "success_threshold_um": 0.4
+  },
+  "search": {
+    "iters": 10,
+    "q_per_round": 6,
+    "policy_epochs_per_round": 1000,
+    "policy_lr": 0.003,
+    "policy_patience": 200,
+    "policy_min_delta": 1e-07,
+    "k_perturb": 4,
+    "k_local": 6,
+    "k_random": 4,
+    "perturb_scale": 12.0,
+    "decay": 0.8,
+    "local_radius": 10,
+    "schedule_seed": 2025,
+    "guided_candidate_seed": 2025,
+    "uniform_candidate_seed": 2026
+  },
+  "policy": {
+    "hidden_dims": [
+      64,
+      64
+    ]
+  },
+  "final": {
+    "lengths": [
+      10,
+      20,
+      25,
+      30,
+      40,
+      50,
+      60,
+      70,
+      75,
+      80,
+      90,
+      100,
+      110,
+      120,
+      125,
+      130,
+      140,
+      150,
+      160,
+      170,
+      175,
+      180,
+      190,
+      200,
+      210,
+      220,
+      225,
+      230,
+      240,
+      250
+    ],
+    "multi_seed_lengths": [
+      5,
+      15,
+      25,
+      40,
+      50,
+      60,
+      75,
+      100,
+      125,
+      150,
+      175,
+      200,
+      225,
+      250
+    ],
+    "extra_seeds": []
+  },
+  "additional": {
+    "exp1_models": [
+      "cnn"
+    ],
+    "receiver_lengths": [
+      25,
+      50,
+      75,
+      100,
+      125,
+      150,
+      175,
+      200,
+      225,
+      250
+    ]
+  },
+  "convergence": {
+    "length": 100,
+    "seed": 2025,
+    "epochs": 60,
+    "patience": 10
+  },
+  "complexity": {
+    "length": 50,
+    "warmup": 10,
+    "repeats": 50
+  },
+  "models": {
+    "dnn": [
+      {
+        "id": "matched_100k",
+        "hidden_dim": 192,
+        "num_hidden_layers": 3,
+        "dropout": 0.05
+      }
+    ],
+    "cnn": [
+      {
+        "id": "multiscale_position_preserving",
+        "channels": 40,
+        "pooled_bins": 4,
+        "mlp_hidden": 96,
+        "dropout": 0.05
+      }
+    ],
+    "gru": [
+      {
+        "id": "matched_100k",
+        "hidden_dim": 100,
+        "num_layers": 2,
+        "head_hidden": 192,
+        "dropout": 0.05
+      }
+    ],
+    "transformer": [
+      {
+        "id": "matched_100k",
+        "d_model": 64,
+        "nhead": 4,
+        "num_layers": 2,
+        "dim_feedforward": 256,
+        "head_hidden": 192,
+        "dropout": 0.05
+      }
+    ]
+  },
+  "refit": {
+    "lr": 0.003,
+    "steps": 6000
+  },
+  "comparison": {
+    "seeds": [
+      2025
+    ],
+    "validation_lengths": [
+      15,
+      50,
+      100,
+      175,
+      200,
+      225
+    ],
+    "exhaustive_lengths": [
+      50,
+      100,
+      200
+    ],
+    "cache_sources": [],
+    "heldout_lengths": []
+  },
+  "simulation": {
+    "grid_step": 0.4,
+    "train_repeats": 60,
+    "valid_repeats": 15,
+    "test_points": 2000,
+    "molecules": 20000,
+    "steps": 1000,
+    "dt": 0.005,
+    "diffusion": 79.4,
+    "features": 250,
+    "seed": 2025,
+    "grid_origin": [
+      0,
+      0
+    ]
+  },
+  "geometry": {
+    "grid_origin": [
+      0,
+      0
+    ],
+    "grid_step": 0.4,
+    "integer_indices": [
+      -50,
+      50
+    ],
+    "coordinate_rule": "(x,y)=(2*i/5,2*j/5), i,j signed integers",
+    "receivers": [
+      [
+        -20.0,
+        -20.0,
+        4.0
+      ],
+      [
+        -20.0,
+        20.0,
+        4.0
+      ],
+      [
+        20.0,
+        -20.0,
+        4.0
+      ],
+      [
+        20.0,
+        20.0,
+        4.0
+      ]
+    ],
+    "tx": [
+      0,
+      0
+    ],
+    "eve_radius": 4,
+    "x_range": [
+      -20,
+      20
+    ],
+    "y_range": [
+      -20,
+      20
+    ],
+    "exclusion": "distance(Tx)>4; distance(each Rx)>8",
+    "split": "validation: (i+j)%5 == 0; training: all remaining feasible points"
+  },
+  "selection": {
+    "checkpoint": "minimum validation physical MSE",
+    "start_candidate": "minimum validation mean Euclidean localization error",
+    "candidate_score_field": "val_mean_error_um",
+    "validation_loss_field": "val_mse_um2",
+    "test_metrics": [
+      "mean_error_um",
+      "median_error_um",
+      "p90_error_um",
+      "success_rate"
+    ],
+    "candidate_train_positions": 428,
+    "candidate_train_repetitions": 30,
+    "candidate_position_fraction": 0.05,
+    "candidate_fraction_denominator": "all feasible SE grid positions",
+    "candidate_count_rule": "ceil(candidate_position_fraction * total_feasible_grid_positions)",
+    "candidate_eligible_positions": "formal training-coordinate split only",
+    "candidate_validation_repetitions": 8,
+    "search_seed": 2026,
+    "final_seed": 2025,
+    "old_optimizer_or_checkpoint_reuse": false,
+    "candidate_coordinates": "Use the proportional count and recursive equal-population spatial strata, with one medoid from each stratum; freeze positions and realization indices across all four models.",
+    "scope": "CNN and DNN model-specific start optimizers and optimized evaluation; CNN fixed and coarse controls only."
+  }
+}
